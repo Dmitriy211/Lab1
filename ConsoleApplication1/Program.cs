@@ -23,7 +23,7 @@ namespace ConsoleApplication1
                 }
                 if (k == 0)  // Если переменная осталась неизменной,...
                 {
-                    Console.WriteLine(args[i]); // ...То выводится число
+                    Console.WriteLine(args[i]); // ...То выводится числj
                 }                                
             }
         }
