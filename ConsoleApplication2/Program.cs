@@ -6,12 +6,25 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication2
 {
-    class student
+    public class student
     {
         public string firstname;
         public string lastname;
         public int age;
         public double gpa;
+
+        public student()
+        {
+            firstname = "Dmitriy";
+            lastname = "Tuchashvili";
+            age = 18;
+            gpa = 4;
+        }
+
+        public override string ToString()
+        {
+            return firstname + ' ' + lastname + ' ' + age + ' ' + gpa;
+        }
     }
         
     class Program
@@ -20,12 +33,21 @@ namespace ConsoleApplication2
         {
             student s = new student();
 
-            s.firstname = Console.ReadLine();
-            s.lastname = Console.ReadLine();
-            s.age = int.Parse(Console.ReadLine());
-            s.gpa = int.Parse(Console.ReadLine());
+            Console.WriteLine("Do you want to add a new student?");
+            string a = Console.ReadLine();
 
-            Console.WriteLine(s.firstname + ' ' + s.lastname + ' ' + s.age + ' ' + s.gpa);
+            if (a == "yes" || a=="Yes" || a=="+" || a=="y")
+            {
+                Console.WriteLine("\nName:");
+                s.firstname = Console.ReadLine();
+                Console.WriteLine("\nSurname:");
+                s.lastname = Console.ReadLine();
+                Console.WriteLine("\nAge:");
+                s.age = int.Parse(Console.ReadLine());
+                Console.WriteLine("\nGPA:");
+                s.gpa = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("\n"+s.ToString());
         }
     }
 }
